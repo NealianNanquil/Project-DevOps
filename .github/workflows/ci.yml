@@ -19,8 +19,16 @@ jobs:
       with:
         node-version: 14  # Choose the desired Node.js version
 
-    - name: Install dependencies
-      run: npm install
+    - name: Install React Native CLI
+      run: npm install -g react-native
+
+    - name: Install dependencies and build the App
+      run: |
+        npm install
+        npm i
+        npm run build
+        npm run test
+      working-directory: ./Activity
 
   deploy:
     name: Deploy to Production
@@ -36,10 +44,12 @@ jobs:
       with:
         node-version: 14  # Choose the desired Node.js version
 
+    - name: Install React Native CLI
+      run: npm install -g react-native
+
     - name: Install dependencies
       run: npm install
 
-      
     - name: Deploy to Vercel
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  # Replace with your secret name
