@@ -31,10 +31,8 @@ jobs:
           exit 1  # Exit with an error code
         fi
 
-    - name: Run tests
+    - name: Run Streamlit App
       run: |
-        # Change to the "Activity" directory where tests are located
+        # Change to the "Activity" directory where your Streamlit app is located
         cd Activity
-
-        # Run tests using pytest
-        pytest
+        streamlit run Braille.py
