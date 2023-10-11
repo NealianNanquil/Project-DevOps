@@ -20,21 +20,21 @@ jobs:
 
     - name: Install dependencies
       run: |
-        # Change to your project directory where 'requirements.txt' is located
-        cd path/to/your/project
+        # Change to the "Activity" directory where 'requirements.txt' is located
+        cd Activity
 
         # Ensure the 'requirements.txt' file exists
         if [ -f "requirements.txt" ]; then
           pip install -r requirements.txt
         else
-          echo "requirements.txt not found in the project directory."
+          echo "requirements.txt not found in the 'Activity' directory."
           exit 1  # Exit with an error code
         fi
 
     - name: Run tests
       run: |
-        # Change to your project directory where tests are located
-        cd path/to/your/project
+        # Change to the "Activity" directory where tests are located
+        cd Activity
 
         # Run tests using pytest
         pytest
