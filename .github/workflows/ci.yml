@@ -50,7 +50,4 @@ jobs:
         npx react-native run-android
       working-directory: ./Activity
 
-    - name: Deploy to Vercel
-      env:
-        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  # Replace with your secret name
-      run: npx vercel --token $VERCEL_TOKEN --prod  # Replace with the deployment command for your platform
+ 
