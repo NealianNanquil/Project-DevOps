@@ -3,11 +3,11 @@ name: Automated Testing
 on:
   push:
     branches:
-      - main  # Change this to your default branch name
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # You can choose a different runner if needed
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -16,13 +16,25 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8  # Choose your Python version
+        python-version: 3.8
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt  # Replace with your requirements file if you have one
+        # Change to your project directory where 'requirements.txt' is located
+        cd path/to/your/project
+
+        # Ensure the 'requirements.txt' file exists
+        if [ -f "requirements.txt" ]; then
+          pip install -r requirements.txt
+        else
+          echo "requirements.txt not found in the project directory."
+          exit 1  # Exit with an error code
+        fi
 
     - name: Run tests
       run: |
-        pytest  # Replace with the command to run your tests
+        # Change to your project directory where tests are located
+        cd path/to/your/project
 
+        # Run tests using pytest
+        pytest
