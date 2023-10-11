@@ -22,13 +22,8 @@ jobs:
     - name: Install React Native CLI
       run: npm install -g react-native
 
-    - name: Install dependencies and build the App
-      run: |
-        npm install
-        npm i
-        npm run build
-        npm run test
-      working-directory: ./Activity
+    - name: Install dependencies
+      run: npm install
 
   deploy:
     name: Deploy to Production
@@ -49,6 +44,12 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+
+    - name: Build and Run the App on iOS and Android
+      run: |
+        npx react-native run-ios
+        npx react-native run-android
+      working-directory: ./Activity
 
     - name: Deploy to Vercel
       env:
