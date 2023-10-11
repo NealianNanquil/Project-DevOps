@@ -41,7 +41,7 @@ jobs:
 
     - name: Build the App
       run: npm run build  # Replace with the actual build command
-      working-directory: Activity/package.json
+      working-directory: ./Activity/package.json
       
     - name: Deploy to Vercel
       env:
