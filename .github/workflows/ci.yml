@@ -41,7 +41,8 @@ jobs:
 
     - name: Build the App
       run: npm run build  # Replace with the actual build command
-
+      working-directory: Activity/package.json
+      
     - name: Deploy to Vercel
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  # Replace with your secret name
