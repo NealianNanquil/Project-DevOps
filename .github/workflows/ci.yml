@@ -45,9 +45,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build and Run the App on iOS and Android
+    - name: Build and Run the App on Android
       run: |
-        npx react-native run-ios
         npx react-native run-android
       working-directory: ./Activity
 
