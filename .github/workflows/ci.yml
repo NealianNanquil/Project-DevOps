@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         # Change to the "Activity" directory where 'requirements.txt' is located
-        cd Activity
+        cd Project-DevOps/Activity
 
         # Ensure the 'requirements.txt' file exists
         if [ -f "requirements.txt" ]; then
